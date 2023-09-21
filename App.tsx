@@ -18,10 +18,6 @@ export default function App() {
     return null;
   }
 
-  // return <WelcomeRoutes />;
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button title="Button title" Icon={() => <></>} />
-    </View>
-  );
+
+  return <WelcomeRoutes />
 }
