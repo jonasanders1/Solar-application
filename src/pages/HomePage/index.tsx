@@ -1,5 +1,5 @@
 
-import { Text, View, StyleSheet} from 'react-native'
+import { Text, View, StyleSheet, ScrollView} from 'react-native'
 import Assets from '../../Assets'
 import Header from '../../components/Header'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
@@ -12,6 +12,7 @@ const HomePage: React.FC = () => {
   return (
 
     <View style={styles.container}>
+
         <Header />
         
         <View style={styles.categoryContainer}>
@@ -20,21 +21,27 @@ const HomePage: React.FC = () => {
             <CategoryButton label='Stars' Icon={Assets.icons.Stars} color='blue'/>
             <CategoryButton label='Asteroids' Icon={Assets.icons.Asteroids} color='pink'/>
             <CategoryButton label='Planets' Icon={Assets.icons.Planets} color='yellow'/>
-            <CategoryButton label='Planets' Icon={Assets.icons.Planets} color='cyan'/>
+            <CategoryButton label='Galexies' Icon={Assets.icons.Galaxies} color='cyan'/>
           </View>
         </View>
 
-        <View style={styles.categoryContainer}>
-          <Text style={styles.categoryTitle}>Planets</Text>
-          <View style={styles.categoriesList}>
-            <PlanetCard label="Mercury" PlanetImage={Assets.images.Mercury} />
-            <PlanetCard label="Venus" PlanetImage={Assets.images.Venus} />
-            <PlanetCard label="Earth" PlanetImage={Assets.images.Earth} />
-            <PlanetCard label="Mars" PlanetImage={Assets.images.Mars} />
-            <PlanetCard label="Jupiter" PlanetImage={Assets.images.Jupiter} />
-            <PlanetCard label="Saturn" PlanetImage={Assets.images.Saturn} />
+          <View style={styles.planetContainer}>
+            <Text style={styles.planetTitle}>Planets</Text>
+            <ScrollView 
+            horizontal 
+            style={styles.scrollView}
+            decelerationRate={"fast"}
+            showsHorizontalScrollIndicator={false}
+            >
+              <PlanetCard label="Mercury" PlanetImage={Assets.images.Mercury} />
+              <PlanetCard label="Venus" PlanetImage={Assets.images.Venus} />
+              <PlanetCard label="Earth" PlanetImage={Assets.images.Earth} />
+              <PlanetCard label="Mars" PlanetImage={Assets.images.Mars} />
+              <PlanetCard label="Jupiter" PlanetImage={Assets.images.Jupiter} />
+              <PlanetCard label="Saturn" PlanetImage={Assets.images.Saturn} />
+              <PlanetCard label="Neptune" PlanetImage={Assets.images.Neptune} />
+            </ScrollView>
           </View>
-        </View>
 
         
         <Assets.images.BackgroundApp style={styles.bgImage} />
@@ -49,7 +56,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.brandBackground,
         flex: 1,
-        justifyContent: "flex-start",
         alignItems: "center",
     },
     bgImage: {
@@ -57,8 +63,10 @@ const styles = StyleSheet.create({
         zIndex: -1,
         backgroundColor: "black"
     },
+    // Category
     categoryContainer: {
-      marginTop: 30,
+      width: "100%",
+      marginTop: 40,
       gap: 10
     },
     categoryTitle: {
@@ -67,6 +75,17 @@ const styles = StyleSheet.create({
     categoriesList: {
       flexDirection: "row",
       gap: 16,
+    },
+    // Planet
+    planetContainer: {
+      marginTop: 40,
+      gap: 10
+    },
+    planetTitle: {
+      color: "white"
+    },
+    scrollView: {
       
-    }
+    },
+   
 })

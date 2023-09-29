@@ -25,12 +25,12 @@ export default Header
 
 const styles = StyleSheet.create({
   container : {
-    marginTop: 10,
+    marginTop: 50,
     zIndex: 5,
     flexDirection: "row",
     justifyContent:"space-between",
     alignItems: "center",
-    width: "90%"
+    width: "100%"
 
   },
   welcomeText: {

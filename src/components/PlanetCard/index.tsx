@@ -31,13 +31,15 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         justifyContent: "space-between",
         height: 190, 
-        width: 140
+        width: 140,
+        marginRight: 15
     },
     footer: {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         bottom: 6,
+        paddingHorizontal: 10
     },
     image: {
         right: 35,
